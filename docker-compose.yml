@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8004:8000"  # Different port for each app
+    env_file:
+      - .env
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: rocket_db
+      POSTGRES_USER: tarxemo
+      POSTGRES_PASSWORD: "@SuperCoder"
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
