@@ -113,7 +113,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'rocket_db',
         'USER': 'tarxemo',
-        'PASSWORD': '@SuperCoder',
+        'PASSWORD': '',
         'HOST': 'db',  # <- Change from 'localhost' to 'db'
         'PORT': '5432',
     }
